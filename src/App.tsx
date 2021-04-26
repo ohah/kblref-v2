@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import 'primereact/resources/themes/mdc-light-indigo/theme.css'
 import 'primereact/resources/themes/saga-blue/theme.css'
 // import 'primereact/resources/themes/arya-blue/theme.css'
@@ -10,16 +10,18 @@ import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css';
 import './App.css';
+import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { sheetoptState, textState } from './store'
+import { sheetoptState, SplitterRatio, textState } from './store'
 import { RecoilRoot, selector, useRecoilState, useRecoilValue } from 'recoil';
 import PrimeReact from 'primereact/api';
 import Luckysheet from './component/Luckysheet';
+import Home from './views/Home'
 PrimeReact.ripple = true;
 function CharacterCounter (){
   const [text,setText] = useRecoilState(textState);
-	const [test, setTest] = useRecoilState(sheetoptState)
+	const [test, setTest] = useRecoilState(sheetoptState);
 	const onChange = (event:React.ChangeEvent<HTMLInputElement>) => {
 		setText(event.target.value);
 	};
@@ -69,12 +71,11 @@ function TextInput() {
 		</div>
 	);
 }
-function App() {
-  
+
+function App() { 
   return (
     <RecoilRoot>
-      <div style={{backgroundColor:'var(--blue-500)'}}> 무야흐흐어허 </div>
-      <CharacterCounter />
+			<Home />
     </RecoilRoot>
   );
 }

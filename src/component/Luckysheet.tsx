@@ -10,7 +10,8 @@ export const Luckysheet = () => {
       container: "luckysheet",
       // plugins:['chart'],
     });
-  }, [])
+  }, []);
+  
   const luckyCss:React.CSSProperties = {
     margin: '0px',
     padding: '0px',

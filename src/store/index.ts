@@ -13,8 +13,15 @@ export const sheetoptState = atom({
   key: 'sheet/opt', // unique ID(다른 atom/selectors 와 구별하기 위함)
   default: {
     layoutCss : {
-      width:"300px",
-      height:"300px",
+      width:"100%",
+      height:"100%",
     }
+  }
+})
+export const SplitterRatio = atom({
+  key: 'SplitterRatio',
+  default: {
+    left : 99.99,
+    right: 0.01
   }
 })
