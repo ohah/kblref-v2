@@ -7,10 +7,17 @@ import {
 } from 'recoil';
 export const textState = atom({
   key: 'textState', // unique ID(다른 atom/selectors 와 구별하기 위함)
-  default: '', // default value (=initial value)
+  default: '', 
+})
+export const User = atom({
+  key: 'Users', 
+  default: {
+    Email : '',
+    NickName : '',
+  }
 })
 export const sheetoptState = atom({
-  key: 'sheet/opt', // unique ID(다른 atom/selectors 와 구별하기 위함)
+  key: 'sheet/opt', 
   default: {
     layoutCss : {
       width:"100%",

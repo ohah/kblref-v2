@@ -5,11 +5,11 @@ declare var window:any
 export const Luckysheet = () => {
   const option = useRecoilValue(sheetoptState);
   useEffect(() => {
-    const luckysheet = window.luckysheet;
-    luckysheet.create({
-      container: "luckysheet",
-      // plugins:['chart'],
-    });
+    // const luckysheet = window.luckysheet;
+    // luckysheet.create({
+    //   container: "luckysheet",
+    //   // plugins:['chart'],
+    // });
   }, []);
   
   const luckyCss:React.CSSProperties = {

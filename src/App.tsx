@@ -18,10 +18,11 @@ import { RecoilRoot, selector, useRecoilState, useRecoilValue } from 'recoil';
 import PrimeReact from 'primereact/api';
 import Luckysheet from './component/Luckysheet';
 import Home from './views/Home'
+import { BrowserRouter } from 'react-router-dom';
 PrimeReact.ripple = true;
 function CharacterCounter (){
   const [text,setText] = useRecoilState(textState);
-	const [test, setTest] = useRecoilState(sheetoptState);
+	const [test,setTest] = useRecoilState(sheetoptState);
 	const onChange = (event:React.ChangeEvent<HTMLInputElement>) => {
 		setText(event.target.value);
 	};
@@ -75,7 +76,9 @@ function TextInput() {
 function App() { 
   return (
     <RecoilRoot>
-			<Home />
+			<BrowserRouter>
+				<Home />
+			</BrowserRouter>
     </RecoilRoot>
   );
 }
