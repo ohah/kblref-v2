@@ -1,14 +1,14 @@
-import { Button } from 'primereact/button';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
 import React from 'react'
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { Luckysheet } from '../component/Luckysheet';
 import { SplitterRatio } from '../store';
 import Header from './Header';
 import { Main } from './Main';
+import Menu from './Menu';
+import Pstat from './Pstat';
 declare var window:any
-
 const Home = () => {
   const Raito = useRecoilValue(SplitterRatio);
   const ResizeEnd = () => {
@@ -26,7 +26,11 @@ const Home = () => {
     <Splitter style={{ height: `${window.innerHeight}px` }} onResizeEnd={ResizeEnd}>
       <SplitterPanel size={Raito.left}>
         <Header />
-        <Route exact path="/" component={Main} />
+        <Menu />
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route path="/개인스탯" component={Pstat} />
+        </Switch>
       </SplitterPanel>
       <SplitterPanel size={Raito.right}>
         <Luckysheet />

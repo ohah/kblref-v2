@@ -9,6 +9,10 @@ export const textState = atom({
   key: 'textState', // unique ID(다른 atom/selectors 와 구별하기 위함)
   default: '', 
 })
+export const isMenu = atom({
+  key: 'Menu', // unique ID(다른 atom/selectors 와 구별하기 위함)
+  default: false, 
+})
 export const User = atom({
   key: 'Users', 
   default: {

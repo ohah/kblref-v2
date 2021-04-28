@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+// import 'primereact/resources/themes/bootstrap4-light-blue/theme.css'
+// import 'primereact/resources/themes/bootstrap4-dark-blue/theme.css'
+// import 'primereact/resources/themes/rhea/theme.css'
 // import 'primereact/resources/themes/mdc-light-indigo/theme.css'
 import 'primereact/resources/themes/saga-blue/theme.css'
 // import 'primereact/resources/themes/arya-blue/theme.css'
@@ -10,11 +13,10 @@ import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css';
 import './App.css';
-import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { sheetoptState, SplitterRatio, textState } from './store'
-import { RecoilRoot, selector, useRecoilState, useRecoilValue } from 'recoil';
+import { sheetoptState, textState } from './store'
+import { RecoilRoot, selector, useRecoilState } from 'recoil';
 import PrimeReact from 'primereact/api';
 import Luckysheet from './component/Luckysheet';
 import Home from './views/Home'

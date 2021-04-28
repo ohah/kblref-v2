@@ -1,8 +1,11 @@
 import { Button } from 'primereact/button';
-import React from 'react'
+import React, { useState } from 'react'
 import GoogleLogin, { GoogleLoginProps, GoogleLoginResponse, GoogleLoginResponseOffline, GoogleLogout } from 'react-google-login';
 import { RecoilState, useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { User } from '../store';
+import { isMenu, User } from '../store';
+import { Sidebar } from 'primereact/sidebar';
+import Menu from './Menu';
+
 const Failure = (e:any) =>{
   console.log(e);
 }
@@ -33,7 +36,7 @@ const Login = () => {
         clientId="40957789666-126lt75vbca60rbr50if51s7j9o05kfu.apps.googleusercontent.com"
         buttonText="Login"
         render={renderProps => (
-          <Button className="p-button-raised p-button-text" icon="pi pi-google" label="로그인" onClick={renderProps.onClick} />
+          <Button icon="pi pi-google" style={{color : 'var(--surface-100)'}} label="로그인" onClick={renderProps.onClick} />
         )}
         onSuccess={(e)=>responseGoogle(e)}
         onFailure={Failure}
@@ -44,7 +47,7 @@ const Login = () => {
       <GoogleLogout
         clientId="40957789666-126lt75vbca60rbr50if51s7j9o05kfu.apps.googleusercontent.com"
         render={renderProps => (
-          <Button className="p-button-raised p-button-secondary p-button-text" icon="pi pi-google" label="로그아웃" onClick={renderProps.onClick} />
+          <Button  style={{color : 'var(--surface-100)'}} icon="pi pi-google" label="로그아웃" onClick={renderProps.onClick} />
         )}
         onLogoutSuccess={Logout}
       >
@@ -53,12 +56,15 @@ const Login = () => {
     </>
   );
 };
+
 const Header = () => {
+  const setMenu = useSetRecoilState(isMenu);
   return (
-    <>
-    <Login />
-    <div style={{ backgroundColor: 'var(--blue-500)' }}> 무야흐흐어허 </div>
-    </>
+    <header style={{ backgroundColor: 'var(--blue-500)', color:'var(--surface-100)' }} className="p-d-flex p-jc-between p-ai-center p-py-1">
+      <Button icon="pi pi-bars" onClick={(e) => setMenu(true)}/>
+      <div>센터</div>
+      <Login />
+    </header>
   )
 }
 export default Header
