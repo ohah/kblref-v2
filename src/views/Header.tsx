@@ -47,7 +47,7 @@ const Login = () => {
       <GoogleLogout
         clientId="40957789666-126lt75vbca60rbr50if51s7j9o05kfu.apps.googleusercontent.com"
         render={renderProps => (
-          <Button  style={{color : 'var(--surface-100)'}} icon="pi pi-google" label="로그아웃" onClick={renderProps.onClick} />
+          <Button style={{color : 'var(--surface-100)'}} icon="pi pi-google" label="로그아웃" onClick={renderProps.onClick} />
         )}
         onLogoutSuccess={Logout}
       >

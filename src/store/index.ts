@@ -36,3 +36,7 @@ export const SplitterRatio = atom({
     right: 0.01
   }
 })
+export const DataSelecteds = atom({
+  key : 'DataSelected',
+  default : []
+})

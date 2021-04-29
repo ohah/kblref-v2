@@ -8,6 +8,7 @@ import Header from './Header';
 import { Main } from './Main';
 import Menu from './Menu';
 import Pstat from './Pstat';
+import Allstat from './Allstat';
 declare var window:any
 const Home = () => {
   const Raito = useRecoilValue(SplitterRatio);
@@ -30,6 +31,7 @@ const Home = () => {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route path="/개인스탯" component={Pstat} />
+          <Route path="/올스탯" component={Allstat} />
         </Switch>
       </SplitterPanel>
       <SplitterPanel size={Raito.right}>

@@ -19,7 +19,7 @@ const data = {
     { "id": "1009", "code": "cm230f032", "name": "Gaming Set", "description": "Product Description", "image": "gaming-set.jpg", "price": 299, "category": "Electronics", "quantity": 63, "inventoryStatus": "INSTOCK", "rating": 3 }
   ]
 }
-const Allstat = () => {
+const Pstat = () => {
   const [products, setProducts] = useState<any>([]);
   // const visible = useRecoilValue(isMenu);
   useEffect(() => {
@@ -34,7 +34,13 @@ const Allstat = () => {
     <div>
       <Button label="확인" onClick={check}/>
       <DataTable value={products} header={TableHeader('1', selected)} selectionMode="multiple" selection={selected} metaKeySelection={false} onSelectionChange={e => setSelected(e.value)} dataKey="id">
-        <Column field="code" header="Code"></Column>
+        <Column headerStyle={{ width: '300px' }} columnKey="code" frozen field="code" header="Code"></Column>
+        <Column field="name" header="Name"></Column>
+        <Column field="category" header="Category"></Column>
+        <Column field="quantity" header="Quantity"></Column>
+        <Column field="name" header="Name"></Column>
+        <Column field="category" header="Category"></Column>
+        <Column field="quantity" header="Quantity"></Column>
         <Column field="name" header="Name"></Column>
         <Column field="category" header="Category"></Column>
         <Column field="quantity" header="Quantity"></Column>
@@ -42,4 +48,4 @@ const Allstat = () => {
     </div>
   )
 }
-export default Allstat;
+export default Pstat;
