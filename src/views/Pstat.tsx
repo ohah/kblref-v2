@@ -32,9 +32,8 @@ const Allstat = () => {
   }
   return (
     <div>
-      <Button label="확인" onClick={check}/>
-      <DataTable value={products} header={TableHeader('1', selected)} selectionMode="multiple" selection={selected} metaKeySelection={false} onSelectionChange={e => setSelected(e.value)} dataKey="id">
-        <Column field="code" header="Code"></Column>
+      <DataTable  value={products} header={TableHeader('1', selected)} selectionMode="multiple" selection={selected} metaKeySelection={false} onSelectionChange={e => setSelected(e.value)} dataKey="id">
+        <Column field="code" className="p-sticky" header="Code"></Column>
         <Column field="name" header="Name"></Column>
         <Column field="category" header="Category"></Column>
         <Column field="quantity" header="Quantity"></Column>

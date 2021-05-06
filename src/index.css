@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.p-datatable table{table-layout:auto !important;}
+.p-datatable-wrapper{overflow: auto;margin-left: auto;margin-right: auto;}
+.p-datatable .p-datatable-tbody > tr > td, .p-datatable .p-datatable-thead > tr > th{}
+.p-sticky{position:sticky;}
+.p-splitter-panel{width:100%;overflow-x:hidden}

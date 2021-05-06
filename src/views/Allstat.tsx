@@ -27,14 +27,12 @@ const Pstat = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const [DataSelected, setDataSelected] = useRecoilState(DataSelecteds)
   const [selected, setSelected] = useState<any>(null);
-  const check = (e:any) => {
-    console.log(DataSelected);
-  }
   return (
     <div>
-      <Button label="확인" onClick={check}/>
-      <DataTable value={products} header={TableHeader('1', selected)} selectionMode="multiple" selection={selected} metaKeySelection={false} onSelectionChange={e => setSelected(e.value)} dataKey="id">
-        <Column headerStyle={{ width: '300px' }} columnKey="code" frozen field="code" header="Code"></Column>
+      <DataTable className="p-datatable-sm p-datatable-gridlines" value={products} header={TableHeader('1', selected)} selectionMode="multiple" selection={selected} metaKeySelection={false} onSelectionChange={e => setSelected(e.value)} dataKey="id">
+        {/* <Column headerStyle={{ width: '10%' }} columnKey="code" frozen field="code" header="Code"></Column> */}
+        <Column field="code" header="Code" ></Column>
+        <Column field="code" header="code"></Column>
         <Column field="name" header="Name"></Column>
         <Column field="category" header="Category"></Column>
         <Column field="quantity" header="Quantity"></Column>
