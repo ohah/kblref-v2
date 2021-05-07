@@ -6,9 +6,10 @@ import { Luckysheet } from '../component/Luckysheet';
 import { SplitterRatio } from '../store';
 import Header from './Header';
 import { Main } from './Main';
-import Menu from './Menu';
+import MenuTeamplate from './Menu';
 import Pstat from './Pstat';
 import Allstat from './Allstat';
+import Schedule from './Schedule';
 declare var window:any
 const Home = () => {
   const Raito = useRecoilValue(SplitterRatio);
@@ -27,11 +28,12 @@ const Home = () => {
     <Splitter style={{ height: `${window.innerHeight}px` }} onResizeEnd={ResizeEnd}>
       <SplitterPanel size={Raito.left}>
         <Header />
-        <Menu />
+        <MenuTeamplate />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route path="/개인스탯" component={Pstat} />
           <Route path="/올스탯" component={Allstat} />
+          <Route path="/일정" component={Schedule} />
         </Switch>
       </SplitterPanel>
       <SplitterPanel size={Raito.right}>
